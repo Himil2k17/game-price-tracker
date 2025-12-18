@@ -1,0 +1,351 @@
+/* ===============================
+   Design Tokens
+================================ */
+:root {
+  --bg-main: #0f1115;
+  --bg-surface: #161a22;
+  --bg-card: #1c2230;
+  --border-soft: #2a3142;
+
+  --text-primary: #ffffff;
+  --text-secondary: #b0b8d1;
+
+  --accent: #4f8cff;
+  --accent-hover: #6aa0ff;
+}
+
+/* ===============================
+   Base Reset
+================================ */
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* ===============================
+   Navbar
+================================ */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 32px;
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+}
+
+.nav-link.active {
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--accent);
+}
+
+/* ===============================
+   Search
+================================ */
+.search-input {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  color: var(--text-primary);
+  padding: 10px 14px;
+  border-radius: 8px;
+  width: 260px;
+}
+
+.search-input::placeholder {
+  color: var(--text-secondary);
+}
+
+/* ===============================
+   Game Grid
+================================ */
+.game-grid {
+  padding: 24px 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+/* ===============================
+   Game Card
+================================ */
+.game-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.game-card-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.game-card-content {
+  padding: 14px;
+}
+
+.game-card h3 {
+  font-size: 16px;
+  margin: 0 0 6px;
+}
+
+.price {
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.price.unavailable {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.game-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===============================
+   Game Details Page
+================================ */
+.game-details {
+  max-width: 1100px;
+  margin: auto;
+  padding: 32px;
+}
+
+.details-cover {
+  width: 100%;
+  border-radius: 16px;
+  margin: 20px 0;
+}
+
+.game-video {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+
+.game-details h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.game-details h3 {
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+/* ===============================
+   Screenshots
+================================ */
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.screenshot-grid img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* .screenshot-thumb {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.screenshot-thumb:hover {
+  transform: scale(1.03);
+} */
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox img {
+  max-width: 85%;
+  max-height: 85%;
+  border-radius: 12px;
+}
+
+/* Arrows */
+.lightbox-arrow {
+  position: absolute;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 48px;
+  cursor: pointer;
+  padding: 12px;
+  opacity: 0.7;
+}
+
+.lightbox-arrow:hover {
+  opacity: 1;
+}
+
+.lightbox-arrow.left {
+  left: 30px;
+}
+
+.lightbox-arrow.right {
+  right: 30px;
+}
+
+/* Thumbnails */
+.screenshot-thumb {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.screenshot-thumb:hover {
+  transform: scale(1.04);
+}
+
+
+
+/* ===============================
+   Deals / Stores
+================================ */
+.deals {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.deal-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  padding: 14px;
+  border-radius: 12px;
+}
+
+.store-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.store-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.discount {
+  color: #3ddc84;
+  font-weight: bold;
+  margin-left: 6px;
+}
+
+.retail {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+
+/* ===============================
+   homepage section
+================================ */
+
+section {
+  margin-bottom: 48px;
+}
+
+section h2 {
+  margin: 24px 32px 16px;
+  font-size: 22px;
+}
+
+.view {
+  color: cyan;
+  text-decoration: none;
+  margin-left: 80px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 16px;
+  padding: 0;
+}
+
+.back-button:hover {
+  color: var(--text-primary);
+}
+
+.back-button::before {
+  content: "←";
+  margin-right: 6px;
+}
+
+/* ===============================
+   Skeleton Loading
+================================ */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-card) 25%,
+    #2a3142 37%,
+    var(--bg-card) 63%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-loading 1.4s ease infinite;
+  border-radius: 8px;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
