@@ -36,6 +36,3 @@ npm run dev
 cd backend
 npm install
 npm start
-
-Create a ".env" file with:
-VITE_RAWG_API_KEY=your_key_here
