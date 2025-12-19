@@ -349,3 +349,29 @@ section h2 {
     background-position: -100% 0;
   }
 }
+
+/* ===============================
+   Upcoming Games
+================================ */
+
+.badge.upcoming {
+  background: #ff9f43;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+/* ===============================
+   New Release Games
+================================ */
+.badge.new {
+  background: #3ddc84;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+}

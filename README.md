@@ -1,4 +1,4 @@
-# 🎮 Game Price Tracker
+# 🎮 Game Price Tracker And Comparison
 
 A full-stack web app that shows video game information and compares PC game prices across multiple stores.
 

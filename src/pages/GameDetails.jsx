@@ -43,12 +43,19 @@ function GameDetails() {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const visibleScreenshots = screenshots.slice(0, 6);
+/* ===============================
+     Top of the Page
+  ================================ */
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   /* ===============================
      Back Button
   ================================ */
   const handleBack = () => {
     window.history.length > 1 ? navigate(-1) : navigate("/games");
+    window.dispatchEvent(new Event("clear-search"));
   };
 
   /* ===============================
@@ -159,9 +166,10 @@ function GameDetails() {
   /* ===============================
      Render
   ================================ */
+  const isUpcoming = game.released && new Date(game.released) > new Date();
   return (
     <div className="game-details">
-      <button className="back-button" onClick={handleBack}>
+      <button className="back-button" onClick={handleBack} >
         Back
       </button>
 
@@ -196,7 +204,9 @@ function GameDetails() {
       </p>
 
       <p>
-        <strong>Release Date:</strong> {game.released}
+        <strong>Release Date:</strong>{" "}
+        {game.released || "TBA"}
+        {isUpcoming && <span className="badge upcoming"> Coming Soon</span>}
       </p>
 
       <div dangerouslySetInnerHTML={{ __html: game.description }} />

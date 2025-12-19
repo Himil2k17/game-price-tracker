@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Games from "./pages/Games";
 import GameDetails from "./pages/GameDetails";
+import UpcomingGames from "./pages/UpcomingGames";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -26,6 +27,10 @@ function App() {
           <Route
             path="/games/:slug"
             element={<GameDetails />}
+          />
+          <Route
+            path="/upcoming" 
+            element={<UpcomingGames />} 
           />
         </Routes>
       </div>

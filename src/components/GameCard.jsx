@@ -11,8 +11,16 @@ function GameCard({ game }) {
         />
 
         <div className="game-card-content">
-          <span className="game-type">Base Game</span>
+          {/* <span className="game-type">Base Game</span> */}
+          {/* UPCOMING BADGE */}
           <h3 className="game-title">{game.name}</h3>
+          {game.released && new Date(game.released) > new Date() && (
+            <span className="badge upcoming">Coming Soon</span>
+          )}
+          {game.released && new Date(game.released) + 7 > new Date() && (
+            <span className="badge new">New</span>
+          )}
+
         </div>
       </div>
     </Link>

@@ -3,7 +3,7 @@ const BASE_URL = "https://api.rawg.io/api";
 
 export async function fetchGames() {
   const response = await fetch(
-    `${BASE_URL}/games?key=${API_KEY}&page_size=36`
+    `${BASE_URL}/games?key=${API_KEY}&page_size=12`
   );
 
   if (!response.ok) {
